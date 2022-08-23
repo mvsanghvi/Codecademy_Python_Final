@@ -29,3 +29,17 @@ print int("0b100",2)
 print int(bin(5),2)
 # Print out the decimal equivalent of the binary 11001001.
 print int("11001001",2)
+
+# The next two operations we are going to talk about are the left and right shift bitwise operators. These operators work by shifting the bits of a number over by a designated number of slots.
+# The block below shows how these operators work on the bit level. Note that in the diagram, the shift is always a positive integer:
+
+#         # Left Bit Shift (<<)  
+#         0b000001 << 2 == 0b000100 (1 << 2 = 4)
+#         0b000101 << 3 == 0b101000 (5 << 3 = 40)       
+        
+#         # Right Bit Shift (>>)
+#         0b0010100 >> 3 == 0b000010 (20 >> 3 = 2)
+#         0b0000010 >> 2 == 0b000000 (2 >> 2 = 0) 
+
+# Shift operations are similar to rounding down after dividing and multiplying by 2 (respectively) for every time you shift, but it’s often easier just to think of it as shifting all the 1s and 0s left or right by the specified number of slots.
+# Note that you can only do bitwise operations on an integer. Trying to do them on strings or floats will result in nonsensical output!
