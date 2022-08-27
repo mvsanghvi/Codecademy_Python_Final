@@ -3,11 +3,11 @@
 
 # You can also represent numbers in base 8 and base 16 using the oct() and hex() functions. (We won’t be dealing with those here, however.)
 
-print bin(1)
-print bin(2)
-print bin(3)
-print bin(4)
-print bin(5)
+print(bin(1))
+print(bin(2))
+print(bin(3))
+print(bin(4))
+print(bin(5))
 
 
 # Python has an int() function that you’ve seen a bit of already. It can turn non-integer input into an integer, like this:
@@ -22,13 +22,13 @@ print bin(5)
 
 # When given a string containing a number and the base that number is in, the function will return the value of that number converted to base ten.
 
-print int("1",2)
-print int("10",2)
-print int("111",2)
-print int("0b100",2)
-print int(bin(5),2)
+print(int("1",2))
+print(int("10",2))
+print(int("111",2))
+print(int("0b100",2))
+print(int(bin(5),2))
 # Print out the decimal equivalent of the binary 11001001.
-print int("11001001",2)
+print(int("11001001",2))
 
 # The next two operations we are going to talk about are the left and right shift bitwise operators. These operators work by shifting the bits of a number over by a designated number of slots.
 # The block below shows how these operators work on the bit level. Note that in the diagram, the shift is always a positive integer:
