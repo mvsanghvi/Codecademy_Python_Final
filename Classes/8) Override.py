@@ -49,6 +49,11 @@ class PartTimeEmployee(Employee):
 #   Then, after your class:
 #     Create an instance of the PartTimeEmployee class called milton. Don’t forget to give it a name.
 #     Finally, print out the result of calling his full_time_wage method. You should see his wage printed out at $20.00 per hour! (That is, for 10 hours, the result should be 200.00.)
+# You super call should look something like this:
+    # def full_time_wage(self, hours):
+    #   return super(PartTimeEmployee, self).method(args)
+# Where method is the method you want (calculate_wage) and args are the arguments that method takes.
+
 
 class Employee(object):
   """Models real-life employees!"""
