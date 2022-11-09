@@ -5,3 +5,11 @@
 
 # The .write() method takes a string argument, so we’ll need to do a few things here:
 # You must close the file. You do this simply by calling my_file.close() (we did this for you in the last exercise). If you don’t close your file, Python won’t write to it properly. From here on out, you gotta close your files!
+my_list = [i ** 2 for i in range(1, 11)]
+
+my_file = open("output.txt", "w")
+
+# Add your code below!
+for value in my_list:
+  my_file.write(str(value) + "\n")
+my_file.close()
