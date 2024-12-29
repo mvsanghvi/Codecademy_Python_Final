@@ -7,13 +7,13 @@ from time import sleep, strftime
 USER_FIRST_NAME = "Gilberto"
 calendar = {}
 def welcome():
-  print "Welcome, " + USER_FIRST_NAME + "."
-  print "Calendar starting..."
+  print("Welcome, " + USER_FIRST_NAME + ".")
+  print("Calendar starting...")
   sleep(1)
-  print "Today is: " + strftime("%A %B %d, %Y") 
-  print "The current time is: " + strftime("%H:%M:%S")
+  print("Today is: " + strftime("%A %B %d, %Y")) 
+  print("The current time is: " + strftime("%H:%M:%S"))
   sleep(1)
-  print "What would you like to do?"
+  print("What would you like to do?")
 def start_calendar():
   welcome()
   start = True
@@ -22,20 +22,20 @@ def start_calendar():
     user_choice = user_choice.upper()
     if user_choice == 'V': 
       if len(calendar.keys()) < 1:
-        print "Calendar empty." 
+        print("Calendar empty.")
       else:
-        print calendar 
+        print(calendar)
     elif user_choice == 'U':
         date = raw_input("What date? ")
         update = raw_input("Enter the update: ")
         calendar[date] = update
-        print "Update was successful"
-        print calendar
+        print("Update was successful")
+        print(calendar)
     elif user_choice == 'A':
       event = raw_input("Enter event: ")
       date = raw_input("Enter date (MM/DD/YYYY): ")
       if(len(date) > 10 or int(date[6:]) < int(strftime("%Y"))):
-        print "Invalid date entered."
+        print("Invalid date entered.")
         try_again = raw_input("Try Again? Y for Yes, N for No: ")
         try_again = try_again.upper()
         if try_again == 'Y':
@@ -44,20 +44,20 @@ def start_calendar():
           start = False
       else:
           calendar[date] = event
-          print "Event addition was successful"
-          print calendar
+          print("Event addition was successful")
+          print(calendar)
     elif user_choice == 'D':
       if len(calendar.keys()) < 1:
-        print "Calendar empty." 
+        print("Calendar empty.") 
       else:
         event = raw_input("What event?")
         for date in calendar.keys():
           if event == calendar[date]:
             del(calendar[date])
-            print "Deletion was successful"
+            print("Deletion was successful")
           else:
-            print "Incorrect event specified"
+            print("Incorrect event specified")
     elif user_choice == 'X':
-      print "Exiting program..."
+      print("Exiting program...")
       quit()
 start_calendar()
