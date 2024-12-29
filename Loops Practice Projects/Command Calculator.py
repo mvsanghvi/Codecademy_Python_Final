@@ -25,7 +25,39 @@ def start_calendar():
         print "Calendar empty." 
       else:
         print calendar 
-      elif user_choice == 'U':
-      date = raw_input("What date? ")
-      update = raw_input("Enter the update: ")
-      calendar[date] = update
+    elif user_choice == 'U':
+        date = raw_input("What date? ")
+        update = raw_input("Enter the update: ")
+        calendar[date] = update
+        print "Update was successful"
+        print calendar
+    elif user_choice == 'A':
+      event = raw_input("Enter event: ")
+      date = raw_input("Enter date (MM/DD/YYYY): ")
+      if(len(date) > 10 or int(date[6:]) < int(strftime("%Y"))):
+        print "Invalid date entered."
+        try_again = raw_input("Try Again? Y for Yes, N for No: ")
+        try_again = try_again.upper()
+        if try_again == 'Y':
+          continue
+        else:
+          start = False
+      else:
+          calendar[date] = event
+          print "Event addition was successful"
+          print calendar
+    elif user_choice == 'D':
+      if len(calendar.keys()) < 1:
+        print "Calendar empty." 
+      else:
+        event = raw_input("What event?")
+        for date in calendar.keys():
+          if event == calendar[date]:
+            del(calendar[date])
+            print "Deletion was successful"
+          else:
+            print "Incorrect event specified"
+    elif user_choice == 'X':
+      print "Exiting program..."
+      quit()
+start_calendar()
