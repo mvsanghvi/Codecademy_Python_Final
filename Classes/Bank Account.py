@@ -5,20 +5,20 @@ class BankAccount(object):
   def __repr__(self):
     return "%s's account. Balance: $%.2f" % (self.name, self.balance)
   def show_balance(self):
-    print balance
+    print(self)
   def deposit(self, amount):
     if amount <= 0:
-      print "Some error message here"
+      print("Some error message here")
     else:
-      print amount
+      print(amount)
       self.balance += amount
       self.show_balance()
   def withdraw(self, amount):
     if amount <= 0:
-      print "Some error message here"
+      print("Some error message here")
     else:
-      print amount
+      print(amount)
       self.balance -= amount
       self.show_balance()
 my_account = BankAccount("Your-name-here")
-print my_account
+print(my_account)
