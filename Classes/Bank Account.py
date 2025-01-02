@@ -5,7 +5,7 @@ class BankAccount(object):
   def __repr__(self):
     return "%s's account. Balance: $%.2f" % (self.name, self.balance)
   def show_balance(self):
-    print(self)
+    print("%s's account. Balance: $%.2f" % (self.name, self.balance))
   def deposit(self, amount):
     if amount <= 0:
       print("Some error message here")
